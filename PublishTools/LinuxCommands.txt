@@ -1,7 +1,7 @@
 cd /<stage dir>
 docker stop <container name>
 docker rm <container name>
-docker run -d --name <container name> -p <Host port>:80 -e "LGV_DB_ROOT_PASS=<password>" -e "LGV_DB_ROOT_CUR_PASS=<password>" -v test-mysql:/var/lib/mysql -v test-data:/home/app/files ielts:latest
+docker run -d --name <container name> -p <Host port>:80 -e "LGV_DB_ROOT_PASS=<password>" -e "LGV_DB_ROOT_CUR_PASS=<password>" -v test-mysql:/var/lib/mysql -v test-data:/home/app/files afshinhoseini/dotnetcore_mysql_srv:latest
 docker cp publish.zip <container name>:/home/app
 docker exec <container name> unzip /home/app/publish.zip -d /home/app
 docker exec -u app:app <container name> dotnet /home/app/API.dll
