@@ -1,7 +1,7 @@
 From microsoft/dotnet:2.1-sdk
 
 Run apt-get update
-Run apt-get upgrade
+Run apt-get upgrade -y
 
 #Set time zone
 RUN apt-get -y install tzdata
