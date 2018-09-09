@@ -15,7 +15,7 @@ service php7.0-fpm start
 
 #Saves the database root user's password
 echo "LGV_DB_ROOT_PASS=${dbRootPass}" >> /home/app/repo.cnf
-echo "Mode=${mode}" >> /home/app/repo.cnf
+echo "MODE=${mode}" >> /home/app/repo.cnf
 
 
 #Changes the database password if requested. This must get done after that mysql service is started.
