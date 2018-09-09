@@ -4,7 +4,7 @@ dbRootPass="${LGV_DB_ROOT_PASS:-root}"
 currentDbRootPass="${LGV_DB_ROOT_CUR_PASS:-root}"
 
 #Removes the repo config file if exists
-[ -f /repo.cnf ] && rm /repo.cnf
+[ -f /home/app/repo.cnf ] && rm /home/app/repo.cnf
 
 #Starts up the the services
 echo -e "----> Starting up services\n"
@@ -13,7 +13,7 @@ service nginx start
 service php7.0-fpm start
 
 #Saves the database root user's password
-echo "LGV_DB_ROOT_PASS=${dbRootPass}" >> /repo.cnf
+echo "LGV_DB_ROOT_PASS=${dbRootPass}" >> /home/app/repo.cnf
 
 #Changes the database password if requested. This must get done after that mysql service is started.
 if [ "$dbRootPass" != "" ]; then
