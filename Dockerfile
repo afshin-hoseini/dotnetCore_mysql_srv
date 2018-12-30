@@ -1,4 +1,4 @@
-From microsoft/dotnet:2.2-sdk
+From microsoft/dotnet:latest
 
 Run apt-get update
 Run apt-get upgrade -y
@@ -16,7 +16,7 @@ RUN {\
 		echo mariadb-server-10.2 mysql-server/root_password_again password 'root'; \
 	} | debconf-set-selections &&\
 	apt-get install software-properties-common -y &&\
-	apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 &&\
+	apt-key adv  --no-tty  --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 &&\
 	add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mariadb.mirrors.ovh.net/MariaDB/repo/10.2/ubuntu xenial main' &&\
 	apt-get install mariadb-server -y
 
