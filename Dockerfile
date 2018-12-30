@@ -1,4 +1,4 @@
-From microsoft/dotnet:2.1-sdk
+From microsoft/dotnet:latest
 
 Run apt-get update
 Run apt-get upgrade -y
